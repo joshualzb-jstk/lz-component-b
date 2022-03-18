@@ -137,7 +137,6 @@
     </el-scrollbar>
     <div class="page-component__content">
       <router-view class="content"></router-view>
-      <footer-nav></footer-nav>
     </div>
   </div>
   </el-scrollbar>
@@ -150,7 +149,7 @@
   export default {
     data() {
       return {
-        lang: this.$route.meta.lang,
+        lang: 'zh-CN',
         navsData,
         scrollTop: 0,
         showHeader: true,

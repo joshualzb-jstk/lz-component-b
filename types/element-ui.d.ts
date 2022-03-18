@@ -3,9 +3,8 @@ import { ElementUIComponent, ElementUIComponentSize, ElementUIHorizontalAlignmen
 
 import { ElButton } from './button'
 import { ElInput } from './input'
-import { ElTooltip } from './tooltip'
-import { ElIcon } from './icon'
 import { ElInfiniteScroll } from './infinite-scroll'
+
 export interface InstallationOptions {
   locale: any,
   i18n: any,
@@ -36,12 +35,6 @@ export class Button extends ElButton {}
 
 /** Input Component */
 export class Input extends ElInput {}
-
-/** Tooltip Component */
-export class Tooltip extends ElTooltip {}
-
-/** Icon Component */
-export class Icon extends ElIcon {}
 
 /** InfiniteScroll Directive */
 export const InfiniteScroll: PluginObject<ElInfiniteScroll>;

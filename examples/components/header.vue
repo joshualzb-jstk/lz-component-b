@@ -1,3 +1,35 @@
+<template>
+  <div class="headerWrapper">
+    <header class="header" ref="header">
+      <div class="container">
+        <h1>
+          <router-link :to="`/zh-CN/component/`">
+            <!-- logo -->
+            <slot>
+              <img
+                src="../assets/images/logo.svg"
+                alt="element-logo"
+                class="nav-logo"
+              />
+              陆泽组件仓库
+            </slot>
+          </router-link>
+        </h1>
+      </div>
+    </header>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {};
+  },
+  computed: {},
+  mounted() {},
+  methods: {},
+  created() {},
+};
+</script>
 <style lang="scss" scoped>
 .headerWrapper {
   height: 80px;
@@ -48,200 +80,15 @@
     a {
       color: #333;
       text-decoration: none;
-      display: block;
-    }
-
-    span {
-      font-size: 12px;
-      display: inline-block;
-      width: 34px;
-      height: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      text-align: center;
-      line-height: 18px;
-      vertical-align: middle;
-      margin-left: 10px;
-      border-radius: 3px;
+      display: flex;
+      align-items: center;
     }
   }
 
-  .nav {
-    float: right;
-    height: 100%;
-    line-height: 80px;
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    &::before,
-    &::after {
-      display: table;
-      content: "";
-    }
-    &::after {
-      clear: both;
-    }
-  }
-
-  .nav-gap {
-    position: relative;
-    width: 1px;
-    height: 80px;
-    padding: 0 20px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: calc(50% - 8px);
-      width: 1px;
-      height: 16px;
-      background: #ebebeb;
-    }
-  }
-
-  .nav-logo,
-  .nav-logo-small {
-    vertical-align: sub;
-  }
-
-  .nav-logo-small {
-    display: none;
-  }
-
-  .nav-item {
-    margin: 0;
-    float: left;
-    list-style: none;
-    position: relative;
-    cursor: pointer;
-
-    &.nav-algolia-search {
-      cursor: default;
-    }
-
-    &.lang-item,
-    &:last-child {
-      cursor: default;
-      margin-left: 34px;
-
-      span {
-        opacity: 0.8;
-      }
-
-      .nav-lang {
-        cursor: pointer;
-        display: inline-block;
-        height: 100%;
-        color: #888;
-
-        &:hover {
-          color: #409eff;
-        }
-        &.active {
-          font-weight: bold;
-          color: #409eff;
-        }
-      }
-    }
-
-    a {
-      text-decoration: none;
-      color: #1989fa;
-      opacity: 0.5;
-      display: block;
-      padding: 0 22px;
-
-      &.active,
-      &:hover {
-        opacity: 1;
-      }
-
-      &.active::after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        bottom: 0;
-        left: calc(50% - 15px);
-        width: 30px;
-        height: 2px;
-        background: #409eff;
-      }
-    }
-  }
-}
-
-.nav-dropdown {
-  margin-bottom: 6px;
-  padding-left: 18px;
-  width: 100%;
-
-  span {
-    display: block;
-    width: 100%;
-    font-size: 16px;
-    color: #888;
-    line-height: 40px;
-    transition: 0.2s;
-    padding-bottom: 6px;
-    user-select: none;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  i {
-    transition: 0.2s;
-    font-size: 12px;
-    color: #979797;
-    transform: translateY(-2px);
-  }
-
-  .is-active {
-    span,
-    i {
-      color: #409eff;
-    }
-    i {
-      transform: rotateZ(180deg) translateY(3px);
-    }
-  }
-
-  &:hover {
-    span,
-    i {
-      color: #409eff;
-    }
-  }
-}
-
-.nav-dropdown-list {
-  width: auto;
-}
-
-@media (max-width: 850px) {
-  .header {
-    .nav-logo {
-      display: none;
-    }
-    .nav-logo-small {
-      display: inline-block;
-    }
-    .nav-item {
-      margin-left: 6px;
-
-      &.lang-item,
-      &:last-child {
-        margin-left: 10px;
-      }
-
-      a {
-        padding: 0 5px;
-      }
-    }
-    .nav-theme-switch,
-    .nav-algolia-search {
-      display: none;
-    }
+  .nav-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
   }
 }
 
@@ -250,191 +97,6 @@
     .container {
       padding: 0 12px;
     }
-    .nav-item {
-      a {
-        font-size: 12px;
-        vertical-align: top;
-      }
-
-      &.lang-item {
-        height: 100%;
-
-        .nav-lang {
-          display: flex;
-          align-items: center;
-
-          span {
-            padding-bottom: 0;
-          }
-        }
-      }
-    }
-    .nav-dropdown {
-      padding: 0;
-      span {
-        font-size: 12px;
-      }
-    }
-    .nav-gap {
-      padding: 0 8px;
-    }
-    .nav-versions {
-      display: none;
-    }
   }
 }
 </style>
-<template>
-  <div class="headerWrapper">
-    <header class="header" ref="header">
-      <div class="container">
-        <h1>
-          <router-link :to="`/${lang}`">
-            <!-- logo -->
-            <slot>
-              <img
-                src="../assets/images/element-logo.svg"
-                alt="element-logo"
-                class="nav-logo"
-              />
-              <img
-                src="../assets/images/element-logo-small.svg"
-                alt="element-logo"
-                class="nav-logo-small"
-              />
-            </slot>
-          </router-link>
-        </h1>
-
-        <!-- nav -->
-        <ul class="nav">
-          <!-- <li class="nav-item">
-            <router-link active-class="active" :to="`/${lang}/guide`"
-              >{{ langConfig.guide }}
-            </router-link>
-          </li> -->
-          <li class="nav-item">
-            <router-link active-class="active" :to="`/${lang}/component`"
-              >{{ langConfig.components }}
-            </router-link>
-          </li>
-          <!-- gap -->
-          <!--          <li class="nav-item" v-show="isComponentPage">-->
-          <!--            <div class="nav-gap"></div>-->
-          <!--          </li>-->
-
-          <!-- 版本选择器 -->
-          <!--          <li class="nav-item nav-versions" v-show="isComponentPage">-->
-          <!--            <select-->
-          <!--                @change="switchVersion"-->
-          <!--            >-->
-          <!--              <option-->
-          <!--                  v-for="item in Object.keys(versions)"-->
-          <!--                  :key="item"-->
-          <!--                  :value="item"-->
-          <!--              >-->
-          <!--                {{ item }}-->
-          <!--              </option>-->
-          <!--            </select>-->
-          <!--          </li>-->
-        </ul>
-      </div>
-    </header>
-  </div>
-</template>
-<script>
-import compoLang from "../i18n/component.json";
-import Element from "main/index.js";
-import themeLoader from "./theme/loader";
-import bus from "../bus";
-import { ACTION_USER_CONFIG_UPDATE } from "./theme/constant.js";
-
-const { version } = Element;
-
-export default {
-  data() {
-    return {
-      active: "",
-      versions: [],
-      version,
-      verDropdownVisible: true,
-      langDropdownVisible: true,
-    };
-  },
-
-  mixins: [themeLoader],
-
-  computed: {
-    lang() {
-      return "zh-CN";
-    },
-    displayedLang() {
-      return this.langs[this.lang] || "中文";
-    },
-    langConfig() {
-      return compoLang.filter((config) => config.lang === this.lang)[0][
-        "header"
-      ];
-    },
-    isComponentPage() {
-      return /^component/.test(this.$route.name);
-    },
-    isHome() {
-      return /^home/.test(this.$route.name);
-    },
-  },
-  mounted() {},
-  methods: {
-    switchVersion(version) {
-      if (version === this.version) return;
-      location.href = `${location.origin}/${this.versions[version]}/${
-        location.hash
-      } `;
-    },
-
-    switchLang(targetLang) {
-      if (this.lang === targetLang) return;
-      localStorage.setItem("ELEMENT_LANGUAGE", targetLang);
-      this.$router.push(this.$route.path.replace(this.lang, targetLang));
-    },
-
-    handleVerDropdownToggle(visible) {
-      this.verDropdownVisible = visible;
-    },
-
-    handleLangDropdownToggle(visible) {
-      this.langDropdownVisible = visible;
-    },
-  },
-
-  created() {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = (_) => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        const versions = JSON.parse(xhr.responseText);
-        this.versions = Object.keys(versions).reduce((prev, next) => {
-          prev[next] = versions[next];
-          return prev;
-        }, {});
-      }
-    };
-    xhr.open("GET", "/versions.json");
-    xhr.send();
-    let primaryLast = "#409EFF";
-    bus.$on(ACTION_USER_CONFIG_UPDATE, (val) => {
-      let primaryColor = val.global["$--color-primary"];
-      if (!primaryColor) primaryColor = "#409EFF";
-      const base64svg = "data:image/svg+xml;base64,";
-      const imgSet = document.querySelectorAll("h1 img");
-      imgSet.forEach((img) => {
-        img.src = `${base64svg}${window.btoa(
-          window
-            .atob(img.src.replace(base64svg, ""))
-            .replace(primaryLast, primaryColor)
-        )}`;
-      });
-      primaryLast = primaryColor;
-    });
-  },
-};
-</script>

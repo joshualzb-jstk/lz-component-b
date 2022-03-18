@@ -11,9 +11,9 @@ lerna-debug.log.*
 lib
 .idea
 .vscode
-examples/element-ui
+examples/lz-component-b
 examples/pages/zh-CN
-fe.element/element-ui
+fe.element/lz-component-b
 .npmrc
 coverage
 waiter.config.js

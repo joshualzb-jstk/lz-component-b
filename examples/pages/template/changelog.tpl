@@ -87,7 +87,7 @@
           vertical-align: middle;
         }
       }
-  
+
       i {
         padding: 0 20px;
         display: inline-block;
@@ -178,7 +178,7 @@
           fragments += `</li><li><h3><a href="https://github.com/ElemeFE/element/releases/tag/v${release}" target="_blank">${release}</a></h3>`;
         }
       }
-      fragments = fragments.replace(/#(\d+)/g, '<a href="https://github.com/ElemeFE/element/issues/$1" target="_blank">#$1</a>');
+      fragments = fragments.replace(/#(\d+)/g, '<a href="https://github.com/joshualzb-jstk/lz-component-b/issues/$1" target="_blank">#$1</a>');
       fragments = fragments.replace(/@([\w-]+)/g, '<a href="https://github.com/$1" target="_blank">@$1</a>');
       this.$refs.timeline.innerHTML = `${fragments}</li>`;
 

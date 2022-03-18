@@ -111,10 +111,10 @@
   </div>
 </template>
 <script>
-import emitter from "element-ui/src/mixins/emitter";
-import Migrating from "element-ui/src/mixins/migrating";
+import emitter from "lz-component-b/src/mixins/emitter";
+import Migrating from "lz-component-b/src/mixins/migrating";
 import calcTextareaHeight from "./calcTextareaHeight";
-import merge from "element-ui/src/utils/merge";
+import merge from "lz-component-b/src/utils/merge";
 
 export default {
   name: "ElInput",
@@ -279,13 +279,12 @@ export default {
     },
     // native input value is set explicitly
     // do not use v-model / :value in template
-    // see: https://github.com/ElemeFE/element/issues/14521
     nativeInputValue() {
       this.setNativeInputValue();
     },
     // when change between <input> and <textarea>,
     // update DOM dependent value and styles
-    // https://github.com/ElemeFE/element/issues/14857
+    // https://github.com/joshualzb-jstk/lz-component-b/issues/14857
     type() {
       this.$nextTick(() => {
         this.setNativeInputValue();
@@ -368,17 +367,15 @@ export default {
     },
     handleInput(event) {
       // should not emit input during composition
-      // see: https://github.com/ElemeFE/element/issues/10516
       if (this.isComposing) return;
 
-      // hack for https://github.com/ElemeFE/element/issues/8548
+      // hack for https://github.com/joshualzb-jstk/lz-component-b/issues/8548
       // should remove the following line when we don't support IE
       if (event.target.value === this.nativeInputValue) return;
 
       this.$emit("input", event.target.value);
 
       // ensure native input value is controlled
-      // see: https://github.com/ElemeFE/element/issues/12850
       this.$nextTick(this.setNativeInputValue);
     },
     handleChange(event) {

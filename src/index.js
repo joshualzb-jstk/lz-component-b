@@ -4,7 +4,7 @@ import Input from '../packages/input/index.js';
 import Button from '../packages/button/index.js';
 import Scrollbar from '../packages/scrollbar/index.js';
 import InfiniteScroll from '../packages/infinite-scroll/index.js';
-import locale from 'element-ui/src/locale';
+import locale from 'lz-component-b/src/locale';
 
 const components = [
   Input,

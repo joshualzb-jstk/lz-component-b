@@ -8,17 +8,17 @@ var mixinsList = fs.readdirSync(path.resolve(__dirname, '../src/mixins'));
 var externals = {};
 
 Object.keys(Components).forEach(function (key) {
-  externals[`element-ui/packages/${key}`] = `element-ui/lib/${key}`;
+  externals[`lz-component-b/packages/${key}`] = `lz-component-b/lib/${key}`;
 });
 
-externals['element-ui/src/locale'] = 'element-ui/lib/locale';
+externals['lz-component-b/src/locale'] = 'lz-component-b/lib/locale';
 utilsList.forEach(function (file) {
   file = path.basename(file, '.js');
-  externals[`element-ui/src/utils/${file}`] = `element-ui/lib/utils/${file}`;
+  externals[`lz-component-b/src/utils/${file}`] = `lz-component-b/lib/utils/${file}`;
 });
 mixinsList.forEach(function (file) {
   file = path.basename(file, '.js');
-  externals[`element-ui/src/mixins/${file}`] = `element-ui/lib/mixins/${file}`;
+  externals[`lz-component-b/src/mixins/${file}`] = `lz-component-b/lib/mixins/${file}`;
 });
 
 externals = [Object.assign({
@@ -31,7 +31,7 @@ exports.alias = {
   main: path.resolve(__dirname, '../src'),
   packages: path.resolve(__dirname, '../packages'),
   examples: path.resolve(__dirname, '../examples'),
-  'element-ui': path.resolve(__dirname, '../')
+  'lz-component-b': path.resolve(__dirname, '../')
 };
 
 exports.vue = {

@@ -1,4 +1,4 @@
-export * from './element-ui'
+export * from './lz-component-b'
 
-import * as ElementUI from './element-ui'
+import * as ElementUI from './lz-component-b'
 export default ElementUI

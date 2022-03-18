@@ -1,7 +1,7 @@
 #! /bin/sh
 mkdir temp_web
-git config --global user.name "element-bot"
-git config --global user.email "wallement@gmail.com"
+git config --global user.name "joshualzb"
+git config --global user.email "joshualzb@163.com"
 
 if [ "$ROT_TOKEN" = "" ]; then
   echo "Bye~"
@@ -44,8 +44,8 @@ if [ "$TRAVIS_TAG" ]; then
   mkdir $SUB_FOLDER
   rm -rf *.js *.css *.map static
   rm -rf $SUB_FOLDER/**
-  cp -rf ../../examples/element-ui/** .
-  cp -rf ../../examples/element-ui/** $SUB_FOLDER/
+  cp -rf ../../examples/lz-component-b/** .
+  cp -rf ../../examples/lz-component-b/** $SUB_FOLDER/
   git add -A .
   git commit -m "$TRAVIS_COMMIT_MSG"
   git push origin gh-pages
@@ -61,7 +61,7 @@ cd temp_web
 git clone https://$ROT_TOKEN@github.com/ElementUI/dev.git && cd dev
 mkdir $TRAVIS_BRANCH
 rm -rf $TRAVIS_BRANCH/**
-cp -rf ../../examples/element-ui/** $TRAVIS_BRANCH/
+cp -rf ../../examples/lz-component-b/** $TRAVIS_BRANCH/
 git add -A .
 git commit -m "$TRAVIS_COMMIT_MSG"
 git push origin master

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { isString, isObject } from 'element-ui/src/utils/types';
+import { isString, isObject } from 'lz-component-b/src/utils/types';
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -75,7 +75,6 @@ export const generateId = function() {
 };
 
 export const valueEquals = (a, b) => {
-  // see: https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
   if (a === b) return true;
   if (!(a instanceof Array)) return false;
   if (!(b instanceof Array)) return false;

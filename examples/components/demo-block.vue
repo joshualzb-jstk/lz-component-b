@@ -201,11 +201,11 @@ export default {
         'ipt src="//unpkg.com/vue/dist/vue.js"></scr' +
         "ipt>" +
         "\n<scr" +
-        `ipt src="//unpkg.com/element-ui@${version}/lib/index.js"></scr` +
+        `ipt src="//unpkg.com/lz-component-b@${version}/lib/index.js"></scr` +
         "ipt>";
       let jsTpl = (script || "").replace(/export default/, "var Main =").trim();
       let htmlTpl = `${resourcesTpl}\n<div id="app">\n${html.trim()}\n</div>`;
-      let cssTpl = `@import url("//unpkg.com/element-ui@${version}/lib/theme-chalk/index.css");\n${(
+      let cssTpl = `@import url("//unpkg.com/lz-component-b@${version}/lib/theme-chalk/index.css");\n${(
         style || ""
       ).trim()}\n`;
       jsTpl = jsTpl

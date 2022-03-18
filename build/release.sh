@@ -16,7 +16,7 @@ then
   VERSION=$VERSION npm run dist
 
   # ssr test
-  node test/ssr/require.test.js            
+  node test/ssr/require.test.js
 
   # publish theme
   echo "Releasing theme-chalk $VERSION ..."
@@ -24,9 +24,9 @@ then
   npm version $VERSION --message "[release] $VERSION"
   if [[ $VERSION =~ "beta" ]]
   then
-    npm publish --tag beta
+    npm publish --tag beta --access public
   else
-    npm publish
+    npm publish --access public
   fi
   cd ../..
 
@@ -44,8 +44,8 @@ then
 
   if [[ $VERSION =~ "beta" ]]
   then
-    npm publish --tag beta
+    npm publish --tag beta --access public
   else
-    npm publish
+    npm publish --access public
   fi
 fi

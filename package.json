@@ -1,5 +1,5 @@
 {
-  "name": "lz-component-b",
+  "name": "@joshualzb-jstk/lz-component-b",
   "version": "2.15.7",
   "description": "A Component Library for Vue.js.",
   "main": "lib/lz-component-b.common.js",

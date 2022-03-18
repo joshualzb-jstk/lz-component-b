@@ -1,5 +1,5 @@
 import Vue, { PluginObject } from 'vue'
-import { ElementUIComponent, ElementUIComponentSize, ElementUIHorizontalAlignment } from './component'
+import { LzbComponent, LzbComponentSize, LzbHorizontalAlignment } from './component'
 
 import { ElButton } from './button'
 import { ElInput } from './input'
@@ -17,18 +17,18 @@ export const version: string
 /**
  * Install all lz-component-b components into Vue.
  * Please do not invoke this method directly.
- * Call `Vue.use(ElementUI)` to install.
+ * Call `Vue.use(Lzb)` to install.
  */
 export function install (vue: typeof Vue, options: InstallationOptions): void
 
-/** ElementUI component common definition */
-export type Component = ElementUIComponent
+/** Lzb component common definition */
+export type Component = LzbComponent
 
 /** Component size definition for button, input, etc */
-export type ComponentSize = ElementUIComponentSize
+export type ComponentSize = LzbComponentSize
 
 /** Horizontal alignment */
-export type HorizontalAlignment = ElementUIHorizontalAlignment
+export type HorizontalAlignment = LzbHorizontalAlignment
 
 /** Button Component */
 export class Button extends ElButton {}

@@ -1,4 +1,4 @@
-import { ElementUIComponent, ElementUIComponentSize } from './component'
+import { LzbComponent, LzbComponentSize } from './component'
 
 /** Button type */
 export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text'
@@ -7,9 +7,9 @@ export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info' |
 export type ButtonNativeType = 'button' | 'submit' | 'reset' | 'menu'
 
 /** Button Component */
-export declare class ElButton extends ElementUIComponent {
+export declare class ElButton extends LzbComponent {
   /** Button size */
-  size: ElementUIComponentSize
+  size: LzbComponentSize
 
   /** Button type */
   type: ButtonType

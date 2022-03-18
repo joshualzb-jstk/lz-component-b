@@ -11,7 +11,7 @@ const components = [
   Input,
   Button,
   Tooltip,
-  Scrollbar,
+  Scrollbar
 ];
 
 const install = (Vue, opts = {}) => {
@@ -40,9 +40,5 @@ export default {
   locale: locale.use,
   i18n: locale.i18n,
   install,
-  Input,
-  Button,
-  Tooltip,
-  Scrollbar,
-  InfiniteScroll
+
 };
